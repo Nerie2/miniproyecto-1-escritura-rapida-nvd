@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ventana.controller.TestController">
+   <children>
+      <ImageView fitHeight="551.0" fitWidth="711.0" layoutY="7.0">
+         <image>
+            <Image url="@images/chat.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtInput" layoutX="212.0" layoutY="231.0" onAction="#validateInput" prefHeight="47.0" prefWidth="286.0" promptText="Escribe rapido" style="-fx-border-color: #FFFFFF;" />
+      <Button layoutX="468.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="40.0" prefWidth="130.0" style="-fx-border-color: #FFFFFF;" text="salir">
+         <font>
+            <Font name="Comic Sans MS Italic" size="12.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="progressBar" layoutX="202.0" layoutY="123.0" prefHeight="18.0" prefWidth="305.0" progress="0.0" style="-fx-background-color: #8A8484;" />
+      <Label layoutX="202.0" layoutY="97.0" text="Temporizador:">
+         <font>
+            <Font name="Comic Sans MS Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLevel" layoutX="446.0" layoutY="97.0" text="Nivel:">
+         <font>
+            <Font name="Comic Sans MS Italic" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnValidate" layoutX="327.0" layoutY="309.0" mnemonicParsing="false" onAction="#validateInput" style="-fx-border-color: #FFFFFF;" text="Validar">
+         <font>
+            <Font name="Comic Sans MS Italic" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Label fx:id="lblMessage" contentDisplay="CENTER" layoutX="202.0" layoutY="291.0" text="Label" />
+      <Label fx:id="lblWord" alignment="CENTER" contentDisplay="CENTER" layoutX="305.0" layoutY="196.0" prefHeight="18.0" prefWidth="98.0" text="Palabra">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
