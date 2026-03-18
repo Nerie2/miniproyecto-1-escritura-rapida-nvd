@@ -12,40 +12,53 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ventana.controller.TestController">
    <children>
-      <ImageView fitHeight="551.0" fitWidth="711.0" layoutY="7.0">
+      <ImageView fitHeight="440.0" fitWidth="600.0" layoutY="1.0">
          <image>
-            <Image url="@images/chat.png" />
+            <Image url="@images/VistaEscrituraRapida.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtInput" layoutX="212.0" layoutY="231.0" onAction="#validateInput" prefHeight="47.0" prefWidth="286.0" promptText="Escribe rapido" style="-fx-border-color: #FFFFFF;" />
-      <Button layoutX="468.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="40.0" prefWidth="130.0" style="-fx-border-color: #FFFFFF;" text="salir">
+      <TextField fx:id="txtInput" layoutX="170.0" layoutY="191.0" onAction="#validateInput" prefHeight="37.0" prefWidth="258.0" promptText="Escribe rapido" style="-fx-border-color: #FFFFFF;" />
+      <Button layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="18.0" prefWidth="46.0" style="-fx-border-color: #FFFFFF;" text="salir">
          <font>
             <Font name="Comic Sans MS Italic" size="12.0" />
          </font>
       </Button>
-      <ProgressBar fx:id="progressBar" layoutX="202.0" layoutY="123.0" prefHeight="18.0" prefWidth="305.0" progress="0.0" style="-fx-background-color: #8A8484;" />
-      <Label layoutX="202.0" layoutY="97.0" text="Temporizador:">
+      <ProgressBar fx:id="progressBar" layoutX="146.0" layoutY="59.0" prefHeight="18.0" prefWidth="305.0" progress="0.0" style="-fx-background-color: #8A8484;" />
+      <Label layoutX="147.0" layoutY="93.0" text="Temporizador:">
          <font>
             <Font name="Comic Sans MS Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblLevel" layoutX="446.0" layoutY="97.0" text="Nivel:">
+      <Label fx:id="lblLevel" layoutX="387.0" layoutY="93.0" text="Nivel:">
          <font>
             <Font name="Comic Sans MS Italic" size="12.0" />
          </font></Label>
-      <Button fx:id="btnValidate" layoutX="327.0" layoutY="309.0" mnemonicParsing="false" onAction="#validateInput" style="-fx-border-color: #FFFFFF;" text="Validar">
+      <Button fx:id="btnValidate" layoutX="265.0" layoutY="280.0" mnemonicParsing="false" onAction="#validateInput" prefHeight="18.0" prefWidth="62.0" style="-fx-border-color: #FFFFFF;" text="Validar">
          <font>
-            <Font name="Comic Sans MS Italic" size="12.0" />
+            <Font name="Comic Sans MS Italic" size="10.0" />
          </font>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Button>
-      <Label fx:id="lblMessage" contentDisplay="CENTER" layoutX="202.0" layoutY="291.0" text="Label" />
-      <Label fx:id="lblWord" alignment="CENTER" contentDisplay="CENTER" layoutX="305.0" layoutY="196.0" prefHeight="18.0" prefWidth="98.0" text="Palabra">
+      <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="147.0" layoutY="242.0" prefHeight="25.0" prefWidth="305.0" text="..." textFill="#00a3ea">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold Italic" size="16.0" />
+         </font></Label>
+      <Label fx:id="lblWord" alignment="CENTER" contentDisplay="CENTER" layoutX="251.0" layoutY="158.0" prefHeight="18.0" prefWidth="98.0" text="Palabra">
+         <font>
+            <Font name="System Italic" size="15.0" />
          </font>
       </Label>
+      <ImageView fx:id="imagIncorrect" fitHeight="140.0" fitWidth="129.0" layoutX="251.0" layoutY="302.0">
+         <image>
+            <Image url="@images/GatoTriste.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imagCorrect" fitHeight="148.0" fitWidth="129.0" layoutX="236.0" layoutY="298.0">
+         <image>
+            <Image url="@images/GatoFeliz.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
