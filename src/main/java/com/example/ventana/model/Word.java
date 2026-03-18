@@ -32,10 +32,13 @@ public class Word implements IWord {
     public String generateWord() {
         String[] words = {"Perro", "Casa", "Chuspa", "Caracol", "Cocodrilo", "algoritmo",
                 "booleano", "compilador", "depuracion", "encapsulado", "framework", "herencia", "instancia",
-                "jerarquia", "kilobyte", "libreria", "metadatos", "parámetro", "recursividad", "sintaxis",
-                "variable", "asíncrono", "repositorio", "interfaz", "polimorfismo", "ventana", "guitarra",
+                "jerarquia", "kilobyte", "libreria", "metadatos", "parametro", "recursividad", "sintaxis",
+                "variable", "asincrono", "repositorio", "interfaz", "polimorfismo", "ventana", "guitarra",
                 "elefante", "cuaderno", "planeta", "camino", "silencio", "aventura", "brujula", "espejo", "zapato",
-                "bosque", "alegria", "destino", "pintura", "cascada", "puente", "universo", "tiempo", "historia"};
+                "bosque", "alegria", "destino", "pintura", "cascada", "puente", "universo", "tiempo",
+                "historia","cielo", "montaña", "río", "bosque", "sol", "luna", "estrella", "mar", "arena", "flor",
+                "viento", "trueno", "lluvia", "nube", "fuego", "tierra", "roca", "hierba", "hoja", "fruta",
+                "camino", "puente", "ciudad", "casa", "puerta", "ventana", "mesa", "silla", "libro", "voz"};
         Random rand = new Random();
         currentWord = words[rand.nextInt(words.length)];
         return currentWord;

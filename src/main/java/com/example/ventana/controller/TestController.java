@@ -33,13 +33,29 @@ import javafx.util.Duration;
  * @version 2.0
  */
 public class TestController {
+
+    /** Label that displays the word to guess. */
     @FXML private Label lblWord;
+
+    /** Label that shows feedback messages (correct/incorrect/time out). */
     @FXML private Label lblMessage;
+
+    /** Label that displays the current level. */
     @FXML private Label lblLevel;
+
+    /** Button used to validate user input. */
     @FXML private Button btnValidate;
+
+    /** Text field where the user types their guess. */
     @FXML private TextField txtInput;
+
+    /** Progress bar representing the countdown timer. */
     @FXML private ProgressBar progressBar;
+
+    /** Image shown when the answer is correct. */
     @FXML private ImageView imagCorrect;
+
+    /** Image shown when the answer is incorrect. */
     @FXML private ImageView imagIncorrect;
 
     /** Core game logic handler. */
@@ -51,6 +67,13 @@ public class TestController {
     /** Current progress value for the countdown timer. */
     private double progress = 0.0;
 
+    /**
+     * Initializes the controller after the FXML components are loaded.
+     * <p>
+     * Sets up the initial state of the UI, creates the game logic instance,
+     * and binds event handlers for user input and validation.
+     * </p>
+     */
     @FXML
     private void initialize() {
         imagCorrect.setVisible(false);
@@ -69,6 +92,12 @@ public class TestController {
         initializeTime();
     }
 
+    /**
+     * Resets the progress bar and stops the active timeline if running.
+     * <p>
+     * This method ensures the countdown timer is cleared before restarting.
+     * </p>
+     */
     private void resetProgressBar() {
         if (timeline != null) {
             timeline.stop();
@@ -77,6 +106,13 @@ public class TestController {
         progressBar.setProgress(progress);
     }
 
+    /**
+     * Initializes and starts the countdown timer.
+     * <p>
+     * The timer updates the progress bar every 0.1 seconds. When time runs out,
+     * the game state is reset and the UI is updated accordingly.
+     * </p>
+     */
     private void initializeTime() {
         progress = 0.0;
         progressBar.setProgress(progress);
@@ -91,8 +127,9 @@ public class TestController {
                         timeline.stop();
                         lblMessage.setText("Tiempo agotado. Perdiste :( ");
                         imagIncorrect.setVisible(true);
+                        imagCorrect.setVisible(false);
                         updateUI();
-                        gameLogic.resetGame();   // ahora limpio
+                        gameLogic.resetGame();
                         lblLevel.setText("Nivel: " + gameLogic.getLevel());
                         resetProgressBar();
                     }
@@ -102,6 +139,13 @@ public class TestController {
         timeline.play();
     }
 
+    /**
+     * Validates the user input against the current word.
+     * <p>
+     * If correct, advances to the next level and updates the UI.
+     * If incorrect, resets the game state and shows feedback.
+     * </p>
+     */
     @FXML
     private void validateInput() {
         String entrada = txtInput.getText().trim();
@@ -118,7 +162,7 @@ public class TestController {
             imagCorrect.setVisible(false);
             imagIncorrect.setVisible(true);
             lblMessage.setText("Incorrecto");
-            gameLogic.resetGame();   // delega en GameLogic
+            gameLogic.resetGame();
             lblLevel.setText("Nivel:" + gameLogic.getLevel());
             resetProgressBar();
         }
@@ -126,12 +170,21 @@ public class TestController {
         txtInput.clear();
     }
 
+    /**
+     * Handles the exit action from the UI.
+     * <p>
+     * Terminates the JavaFX application and prints a message to the console.
+     * </p>
+     */
     @FXML
     private void handleExit() {
         javafx.application.Platform.exit();
         System.out.println("Saliendo..");
     }
 
+    /**
+     * Updates the UI labels with the current word and level.
+     */
     private void updateUI() {
         lblWord.setText(gameLogic.getCurrentWord());
         lblLevel.setText("Nivel: " + gameLogic.getLevel());
