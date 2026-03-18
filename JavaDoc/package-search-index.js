@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.ventana","l":"com.example.ventana"},{"m":"com.example.ventana","l":"com.example.ventana.controller"},{"m":"com.example.ventana","l":"com.example.ventana.model"}];updateSearchResults();
